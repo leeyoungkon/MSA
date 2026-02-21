@@ -19,4 +19,5 @@ jobs:
           cache: maven
 
       - name: Test
+        working-directory: second
         run: mvn -B test
