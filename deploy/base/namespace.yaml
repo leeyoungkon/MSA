@@ -1,24 +1,4 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Namespace
 metadata:
   name: msa
-  namespace: msa
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: msa
-  template:
-    metadata:
-      labels:
-        app: msa
-    spec:
-      containers:
-        - name: msa
-          image: ghcr.io/leeyoungkon/msa:latest
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8090
-          env:
-            - name: SERVER_PORT
-              value: "8090"
